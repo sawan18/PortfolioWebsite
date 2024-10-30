@@ -16,7 +16,7 @@ function App() {
   // Words to change
   const wordsToChange = [
     "DJ",
-    "Golfer",
+    "Cricketer",
     "Comedian",
     "Software Engineer",
     "Artist",
