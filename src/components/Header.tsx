@@ -5,8 +5,9 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-      <nav className="max-w-4xl mx-auto px-4 py-3">
+  <div className="border-0 border-b-0 border-none">
+    <header className="sticky top-0 z-50 bg-transparent/70 backdrop-blur-sm border-0 border-b-0 border-none shadow-none after:hidden before:hidden"> 
+      <nav className="max-w-4xl mx-auto px-4 py-3"> 
         <div className="flex items-center justify-between">
           <a href="/" className="text-xl font-bold tracking-tight hover:text-blue-600 transition-colors">
             SAWAN PANDITA
@@ -32,6 +33,7 @@ export function Header() {
         )}
       </nav>
     </header>
+    </div>
   );
 }
 

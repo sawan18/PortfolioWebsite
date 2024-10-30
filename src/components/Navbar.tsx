@@ -15,61 +15,31 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
   return (
-    <div className="hidden md:flex items-center gap-1">
+    <nav className="hidden md:flex items-center gap-2 bg-white/10 dark:bg-gray-800/10 backdrop-blur-md rounded-full px-2 py-1">
       {navItems.map((item) => (
         <button
           key={item.id}
           onClick={() => setActiveSection(item.id)}
-          className={`px-4 py-2 rounded-lg transition-colors ${
-            activeSection === item.id
-              ? 'bg-blue-500 text-white'
-              : 'hover:bg-gray-200 dark:hover:bg-gray-700'
-          }`}
+          className={`
+            relative px-4 py-2 rounded-full text-sm font-medium 
+            transition-all duration-300 ease-out
+            ${
+              activeSection === item.id
+                ? 'text-white bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg nav-glow'
+                : 'text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 hover:bg-white/10 dark:hover:bg-gray-800/30'
+            }
+          `}
         >
-          {item.label}
+          <span className="relative z-10">
+            {item.label}
+          </span>
+          {activeSection === item.id && (
+            <span className="absolute inset-0 bg-gradient-to-r from-blue-500/50 to-purple-500/50 rounded-full blur-sm" />
+          )}
         </button>
       ))}
-    </div>
+    </nav>
   );
 };
 
 export default Navbar;
-
-// import React from 'react';
-
-// const navItems = [
-//   { id: 'about', label: 'About', special: true  },
-//   { id: 'projects', label: 'Projects', special: true  },
-//   { id: 'blog', label: 'Blogs', special: true },
-//   { id: 'snippets', label: 'Snippets' , special: true },
-//   { id: 'newsletter', label: 'Newsletter', special: true },
-// ];
-
-// interface NavbarProps {
-//   activeSection: string;
-//   setActiveSection: (section: string) => void;
-// }
-
-// const Navbar: React.FC<NavbarProps> = ({ activeSection, setActiveSection }) => {
-//   return (
-//     <div className="flex items-center justify-center gap-4 bg-black bg-opacity-80 p-3 rounded-full shadow-md">
-//       {navItems.map((item) => (
-//         <button
-//           key={item.id}
-//           onClick={() => setActiveSection(item.id)}
-//           className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-//             activeSection === item.id
-//               ? 'bg-gray-700 text-white' // Active state
-//               : item.special
-//               ? 'text-yellow-500' // Special color for "Newsletter"
-//               : 'text-gray-300 hover:text-white' // Default color and hover effect
-//           }`}
-//         >
-//           {item.label}
-//         </button>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default Navbar;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Code2, Rocket, Coffee } from 'lucide-react';
 import myPic from '../assets/myPic.jpg';
 
