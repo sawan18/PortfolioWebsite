@@ -7,7 +7,7 @@ const Resume = () => {
       <div className="flex justify-between items-center">
         <h2 className="text-3xl font-bold">Resume</h2>
         <a
-          href="/resume.pdf"
+          href="/Sawan_Pandita_Resume.pdf"  // Ensure the path is correct
           download
           className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
         >
@@ -30,8 +30,8 @@ const Resume = () => {
             </div>
             <div>
               <h4 className="text-lg font-semibold">Bachelor of Engineering</h4>
-              <p className="text-gray-600 dark:text-gray-400">MIT</p>
-              <p className="text-sm text-gray-500">2012 - 2016</p>
+              <p className="text-gray-600 dark:text-gray-400">Pennsylvania State University</p>
+              <p className="text-sm text-gray-500">2023 - 2026</p>
             </div>
           </div>
         </section>
